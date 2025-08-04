@@ -12,7 +12,7 @@ git clone <repo-url> zippy-calc   # or just copy the three *.go files
 cd zippy-calc
 go mod init zippy-calc            # once, to create go.mod
 go run .                          # launch the calculator
-
+```
 
 ⸻
 
