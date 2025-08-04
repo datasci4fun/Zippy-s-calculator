@@ -1,5 +1,3 @@
-Below is a drop-in replacement for README.md with the project-tree and example session sections rendered correctly on GitHub.
-
 # Zippy’s Calculator
 
 A beginner-friendly command-line calculator written in Go.  
@@ -16,49 +14,59 @@ go mod init zippy-calc            # once, to create go.mod
 go run .                          # launch the calculator
 ```
 
-⸻
+---
 
-Why this project exists
-	•	Learn Go basics – packages, the main() function, go mod.
-	•	See clean project structure – logic, UI, and main split into files.
-	•	Practice reading annotated code – every single line is explained in plain English.
+## Why this project exists
 
-⸻
+- Learn Go basics – packages, the `main()` function, `go mod`.
+- See clean project structure – logic, UI, and `main` split into files.
+- Practice reading annotated code – every single line is explained in plain English.
 
-Project layout
+---
 
+## Project layout
+
+```
 zippy-calc/
 ├── main.go          # program entry point – prints banner, starts UI loop
 ├── ui.go            # text-based menu, user input, validation
 └── calculator.go    # pure math functions + error handling
+```
 
-All three source files share the same package name (package main), so they compile into one executable.
+All three source files share the same package name (`package main`), so they compile into one executable.
 
-⸻
+---
 
-Prerequisites
-	•	Go 1.22 or newer – download from https://golang.org/dl and install.
+## Prerequisites
 
-go version   # should show go1.22 or later
+- **Go 1.22 or newer** – download from <https://golang.org/dl> and install.
 
+  ```bash
+  go version   # should show go1.22 or later
+  ```
 
-	•	A terminal (Command Prompt, PowerShell, Bash, Zsh…) – built-in on macOS, Linux, and Windows.
+- **A terminal** (Command Prompt, PowerShell, Bash, Zsh…) – built-in on macOS, Linux, and Windows.
 
-⸻
+---
 
-Getting started
-	1.	Clone or copy the zippy-calc folder to any directory.
-	2.	Initialise a module (creates go.mod):
+## Getting started
 
-go mod init zippy-calc
+1. Clone or copy the `zippy-calc` folder to any directory.  
+2. Initialize a module (creates `go.mod`):
 
+   ```bash
+   go mod init zippy-calc
+   ```
 
-	3.	Run the app:
+3. Run the app:
 
-go run .
+   ```bash
+   go run .
+   ```
 
-Example session
+### Example session
 
+```
 === Zippy's Calculator v2 ===
 Choose an operation:
   1) +
@@ -67,50 +75,54 @@ Choose an operation:
   4) /
   5) Exit
 Select option:
+```
 
+4. Build an executable (optional):
 
-	4.	Build an executable (optional):
+   ```bash
+   go build -o zippy
+   ./zippy
+   ```
 
-go build -o zippy
-./zippy
+---
 
+## How the code is organised
 
+| File            | Responsibility                                                   | Beginner take-aways                                   |
+| --------------- | ---------------------------------------------------------------- | ----------------------------------------------------- |
+| `main.go`       | Starts the program, prints a banner, calls the UI loop.          | Shows the minimal structure of a Go `main` package.   |
+| `ui.go`         | Handles all user interaction (menu, number input, validation).   | Demonstrates buffered input and string→number parsing |
+| `calculator.go` | Pure math functions plus error checking (division by zero).      | Separates business logic from I/O; shows error returns|
 
-⸻
+---
 
-How the code is organised
+## Extending the calculator
 
-File	Responsibility	Beginner take-aways
-main.go	Starts the program, prints a banner, calls the UI loop.	Shows the minimal structure of a Go main package.
-ui.go	Handles all user interaction (menu, number input, validation).	Demonstrates buffered input and string → number parsing.
-calculator.go	Pure math functions plus error checking (division by zero).	Separates business logic from I/O; shows how to return errors.
+- **Add new operators**
 
+  1. Append the symbol to `ops` in `ui.go`.  
+  2. Add a `case` in `Calculate()` inside `calculator.go` (or write a helper).
 
-⸻
+- **Make it GUI-based** — swap the console UI for a toolkit like [Fyne](https://fyne.io) or [Gio](https://gioui.org).
 
-Extending the calculator
-	•	Add new operators
-	1.	Append the symbol to ops in ui.go.
-	2.	Add a case in Calculate() inside calculator.go (or write a helper).
-	•	Make it GUI-based — swap the console UI for a toolkit like Fyne or Gio.
-	•	Add unit tests — create calculator_test.go and test each math helper with Go’s testing package.
+- **Add unit tests** — create `calculator_test.go` and test each math helper with Go’s `testing` package.
 
-⸻
+---
 
-Contributing
+## Contributing
 
 Pull requests are welcome—especially if you:
-	•	Spot a typo in the comments
-	•	Improve input validation
-	•	Add more beginner-friendly notes
 
-⸻
+- Spot a typo in the comments
+- Improve input validation
+- Add more beginner-friendly notes
 
-License
+---
+
+## License
 
 MIT – do whatever you want, just keep the copyright notice.
 
-⸻
+---
 
 Happy hacking! ✨
-
