@@ -1,1 +1,117 @@
-test
+# Zippy’s Calculator
+
+A beginner-friendly command-line calculator written in Go.  
+You type two numbers and pick an operation, it prints the answer—simple as that.
+
+---
+
+## TL;DR
+
+```bash
+git clone <repo-url> zippy-calc   # or just copy the three *.go files
+cd zippy-calc
+go mod init zippy-calc            # once, to create go.mod
+go run .                          # launch the calculator
+
+
+⸻
+
+Why this project exists
+	•	Learn Go basics – packages, the main() function, go mod.
+	•	See clean project structure – logic, UI, and main split into files.
+	•	Practice reading annotated code – every single line is explained in plain English.
+
+⸻
+
+Project layout
+
+zippy-calc/
+├─ main.go          # program entry point – prints banner, starts UI loop
+├─ ui.go            # text-based menu, user input, validation
+└─ calculator.go    # pure math functions + error handling
+
+All three source files share the same package name (package main), so they compile into one executable.
+
+⸻
+
+Prerequisites
+	•	Go 1.22 + – download from golang.org/dl and follow the installer.
+Verify with:
+
+go version   # should show go1.22 or later
+
+
+	•	A terminal (Command Prompt, PowerShell, bash, zsh…) – already built-in on macOS, Linux, or Windows.
+
+⸻
+
+Getting started
+	1.	Clone or copy the zippy-calc folder to any directory.
+	2.	Initialize a module (creates go.mod):
+
+go mod init zippy-calc
+
+
+	3.	Run the app:
+
+go run .
+
+You should see:
+
+=== Zippy's Calculator v2 ===
+Choose an operation:
+  1) +
+  2) -
+  3) *
+  4) /
+  5) Exit
+Select option:
+
+
+	4.	Build an executable (optional):
+
+go build -o zippy
+./zippy
+
+
+
+⸻
+
+How the code is organised
+
+File	Responsibility	Key take-aways for beginners
+main.go	Starts the program, prints a banner, calls the UI loop.	Shows the minimal structure of a Go main package.
+ui.go	Handles all user interaction (menu, number input, validation).	Demonstrates buffered input with bufio.Reader, converting strings to numbers, and loops.
+calculator.go	Pure math functions plus error checking (division-by-zero).	Separates business logic from I/O; shows how to return errors.
+
+(The table above is for README clarity; the code itself never relies on tables.)
+
+⸻
+
+Extending the calculator
+	•	Add new operators
+	1.	Append the symbol to ops in ui.go.
+	2.	Implement a new case in Calculate() inside calculator.go (or write a new helper function).
+	•	Make it GUI-based
+Switch ui.go to use a GUI toolkit like Fyne or Gio once you’re comfortable.
+	•	Add unit tests
+Create calculator_test.go and test each math helper with the testing package.
+
+⸻
+
+Contributing
+
+Pull requests are welcome—especially if you:
+	•	Spot a typo in the comments
+	•	Improve input validation
+	•	Add more beginner-friendly notes
+
+⸻
+
+License
+
+MIT – do whatever you want, just keep the copyright notice.
+
+⸻
+
+Happy hacking! ✨
