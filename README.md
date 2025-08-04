@@ -1,7 +1,7 @@
 # Zippy’s Calculator
 
 A beginner-friendly command-line calculator written in Go.  
-You type two numbers and pick an operation, it prints the answer—simple as that.
+You type two numbers and pick an operation; it prints the answer—simple as that.
 
 ---
 
@@ -35,13 +35,13 @@ All three source files share the same package name (package main), so they compi
 ⸻
 
 Prerequisites
-	•	Go 1.22 + – download from golang.org/dl and follow the installer.
+	•	Go 1.22 + – download from https://golang.org/dl and install.
 Verify with:
 
 go version   # should show go1.22 or later
 
 
-	•	A terminal (Command Prompt, PowerShell, bash, zsh…) – already built-in on macOS, Linux, or Windows.
+	•	A terminal (Command Prompt, PowerShell, bash, zsh…) – already built-in on macOS, Linux, and Windows.
 
 ⸻
 
@@ -56,7 +56,7 @@ go mod init zippy-calc
 
 go run .
 
-You should see:
+Example session:
 
 === Zippy's Calculator v2 ===
 Choose an operation:
@@ -81,7 +81,7 @@ How the code is organised
 
 File	Responsibility	Key take-aways for beginners
 main.go	Starts the program, prints a banner, calls the UI loop.	Shows the minimal structure of a Go main package.
-ui.go	Handles all user interaction (menu, number input, validation).	Demonstrates buffered input with bufio.Reader, converting strings to numbers, and loops.
+ui.go	Handles all user interaction (menu, number input, validation).	Demonstrates buffered input with bufio.Reader, string→number parsing
 calculator.go	Pure math functions plus error checking (division-by-zero).	Separates business logic from I/O; shows how to return errors.
 
 (The table above is for README clarity; the code itself never relies on tables.)
@@ -91,9 +91,9 @@ calculator.go	Pure math functions plus error checking (division-by-zero).	Separa
 Extending the calculator
 	•	Add new operators
 	1.	Append the symbol to ops in ui.go.
-	2.	Implement a new case in Calculate() inside calculator.go (or write a new helper function).
+	2.	Add a case in Calculate() inside calculator.go (or write a new helper).
 	•	Make it GUI-based
-Switch ui.go to use a GUI toolkit like Fyne or Gio once you’re comfortable.
+Replace the console UI with a toolkit like Fyne or Gio when you’re comfortable.
 	•	Add unit tests
 Create calculator_test.go and test each math helper with the testing package.
 
