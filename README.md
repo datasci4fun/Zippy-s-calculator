@@ -16,14 +16,14 @@ go run .                          # launch the calculator
 
 ⸻
 
-###Why this project exists
+### Why this project exists
 	•	Learn Go basics – packages, the main() function, go mod.
 	•	See clean project structure – logic, UI, and main split into files.
 	•	Practice reading annotated code – every single line is explained in plain English.
 
 ⸻
 
-##Project layout
+## Project layout
 
 zippy-calc/
 ├─ main.go          # program entry point – prints banner, starts UI loop
@@ -34,7 +34,7 @@ All three source files share the same package name (package main), so they compi
 
 ⸻
 
-##Prerequisites
+## Prerequisites
 	•	Go 1.22 + – download from https://golang.org/dl and install.
 Verify with:
 
@@ -45,7 +45,7 @@ go version   # should show go1.22 or later
 
 ⸻
 
-##Getting started
+## Getting started
 	1.	Clone or copy the zippy-calc folder to any directory.
 	2.	Initialize a module (creates go.mod):
 
@@ -77,7 +77,7 @@ go build -o zippy
 
 ⸻
 
-##How the code is organised
+## How the code is organised
 
 File	Responsibility	Key take-aways for beginners
 main.go	Starts the program, prints a banner, calls the UI loop.	Shows the minimal structure of a Go main package.
